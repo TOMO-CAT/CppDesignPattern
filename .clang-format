@@ -1,0 +1,14 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 120
+ReflowComments: false
+AccessModifierOffset: -3
+FixNamespaceComments: true
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+SpacesBeforeTrailingComments: 2
+# How many spaces are allowed at the start of a line comment. (need clang-format 13)
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: 1

@@ -1,16 +1,14 @@
 #ifndef BASE_HANDLER_H_
 #define BASE_HANDLER_H_
 
-#include <string>
 #include "Handler.h"
+#include <string>
 
 class BaseApprover : public ApproverInterface {
  public:
     BaseApprover(double mpa, std::string n) : max_processible_amount_(mpa), name_(n), superior_(nullptr) {}
     // 设置上级
-    void setSuperior(ApproverInterface* superior) {
-        superior_ = superior;
-    }
+    void setSuperior(ApproverInterface *superior) { superior_ = superior; }
     // 处理票据
     void handleRequest(double amount) {
         // 可处理时直接处理即可
@@ -25,13 +23,13 @@ class BaseApprover : public ApproverInterface {
             return;
         }
         // 最上级依然无法处理时报错
-        printf("无人有权限处理该票据, 票据金额:%f\n", name_.c_str(), amount);
+        printf("无人有权限处理该票据, 票据金额:%f\n", amount);
     }
 
  private:
     double max_processible_amount_;  // 可处理的最大面额
     std::string name_;
-    ApproverInterface* superior_;
+    ApproverInterface *superior_;
 };
 
 #endif  // BASE_HANDLER_H_
